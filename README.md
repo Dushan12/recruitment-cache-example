@@ -1,29 +1,28 @@
-# README #
+### Installation Guide###
+composer install
+sudo apt-get -y install gcc make autoconf libc-dev pkg-config
+sudo pecl8.3-sp install apcu
+php -v
+sudo pecl8.4.2-sp install apcu
+sudo apt install php-pear
+sudo pecl install apcu
+whereis php
+php --ini
+sudo pecl install apcu
+pecl list
+sudo nano /etc/php/8.4/cli/php.ini
+sudo pecl install apcu
+sudo nano /etc/php/8.4/cli/php.ini
 
-This README would normally document whatever steps are necessary to get your application up and running.
+leaf serve
 
-### What is this repository for? ###
+### PHP INI CONF ###
+extension=apcu.so;
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+[apc]  
+apc.enabled=1
+apc.shm_size=128M
+apc.ttl=7200
+apc.user_ttl=7200
+apc.gc_ttl=3600
+apc.max_file_size=1M
