@@ -19,6 +19,19 @@ use Testcontainers\Wait\WaitForLog;
 final class saveUsersTest extends TestCase
 {
 
+    /*
+     * only for java now but the test container as is in this test will not expose issues with read after update
+     *
+     * https://github.com/silaev/mongodb-replica-set?tab=readme-ov-file
+     * final MongoDbReplicaSet mongoDbReplicaSet = MongoDbReplicaSet.builder()
+                .mongoDockerImageName("mongo:4.4.4")
+                .useHostDockerInternal(true)
+                .replicaSetNumber(3)
+                .addArbiter(true)
+                .addToxiproxy(true)
+                .build()
+     *  this is something we need to consider for future
+     */
     private Container $container;
     private DocumentManager $dm;
 
